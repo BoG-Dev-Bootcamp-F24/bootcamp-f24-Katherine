@@ -1,0 +1,1093 @@
+{
+	"info": {
+		"_postman_id": "7783a6da-b45c-4b26-bffe-bc94fa0a86e6",
+		"name": "Weatherstack",
+		"description": "# Quick Start Guide\n\n## Step 1: Your API Access Key\n\nTo get started quickly, you need to fork the MarketStack Postman Collection. Simply click the button below to fork it.\n\n[<img src=\"https://run.pstmn.io/button.svg\">](https://god.gw.postman.com/run-collection/10131015-276c4312-f682-425d-b6b1-0f82c0a7f2b3?action=collection/fork)\n\n### Step 2: Get your API Access Key\n\n1. Go to the [Weatherstack](https://weatherstack.com/?utm_source=Postman&utm_medium=Referral) website and choose the right subscription plan for your particular project.\n2. Get your personal API Access Key on the [Dashboard](https://weatherstack.com/dashboard) to authenticate with the API. Keep it safe! You can reset it at any time in your Account Dashboard.\n    \n\n## Step 3: Make your first API call\n\nWeatherstack Postman collection contains all the endpoints supported by Weatherstack API.\n\n1. Current weather data\n2. Historical weather data\n3. Weather forecast\n4. Autocomplete/Location lookup",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38363649"
+	},
+	"item": [
+		{
+			"name": "Current",
+			"item": [
+				{
+					"name": "Current Location",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.weatherstack.com/current?query=New Delhi",
+							"protocol": "https",
+							"host": [
+								"api",
+								"weatherstack",
+								"com"
+							],
+							"path": [
+								"current"
+							],
+							"query": [
+								{
+									"key": "query",
+									"value": "New Delhi",
+									"description": "[Required] Use this parameter to pass a single location or multiple semicolon-separated location identifiers to the API. Learn more about the Query Parameter.\n"
+								}
+							]
+						},
+						"description": "\\`Current\\` endpoint let you fetch the weather stats of the metioned location in the \\`query\\` parameter."
+					},
+					"response": [
+						{
+							"name": "200 OK – Current Location",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://api.weatherstack.com/current?access_key={PASTE_YOUR_API_KEY_HERE}&query=New Delhi",
+									"protocol": "https",
+									"host": [
+										"api",
+										"weatherstack",
+										"com"
+									],
+									"path": [
+										"current"
+									],
+									"query": [
+										{
+											"key": "access_key",
+											"value": "{PASTE_YOUR_API_KEY_HERE}",
+											"description": "[Required] Specify your API access key, available in your account dashboard.\n"
+										},
+										{
+											"key": "query",
+											"value": "New Delhi",
+											"description": "[Required] Use this parameter to pass a single location or multiple semicolon-separated location identifiers to the API. Learn more about the Query Parameter.\n"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 18 Mar 2024 12:33:07 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; Charset=UTF-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "x-apilayer-transaction-id",
+									"value": "b9b7f0b7-406c-476a-ba48-4c158e7e772e"
+								},
+								{
+									"key": "access-control-allow-methods",
+									"value": "GET, HEAD, POST, PUT, PATCH, DELETE, OPTIONS"
+								},
+								{
+									"key": "access-control-allow-origin",
+									"value": "*"
+								},
+								{
+									"key": "x-request-time",
+									"value": "0.162"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Report-To",
+									"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=pDAibl%2Fnk7QXgvSnbrYs4%2BLGejv4WB6s1fqTGIl75zEsou6DTxy3Y1mPOPm88dc3BCLmxETP1B0TTf43OPmXcNbr8zGV%2BwTD1vS0eNW2MpAa%2FaIoGuNUJZno%2FRxjECOhhAXrVx7L\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "NEL",
+									"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "CF-RAY",
+									"value": "86653fceadd7a738-IXC"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"request\": {\n        \"type\": \"City\",\n        \"query\": \"New Delhi, India\",\n        \"language\": \"en\",\n        \"unit\": \"m\"\n    },\n    \"location\": {\n        \"name\": \"New Delhi\",\n        \"country\": \"India\",\n        \"region\": \"Delhi\",\n        \"lat\": \"28.600\",\n        \"lon\": \"77.200\",\n        \"timezone_id\": \"Asia/Kolkata\",\n        \"localtime\": \"2024-03-18 18:01\",\n        \"localtime_epoch\": 1710784860,\n        \"utc_offset\": \"5.50\"\n    },\n    \"current\": {\n        \"observation_time\": \"12:31 PM\",\n        \"temperature\": 28,\n        \"weather_code\": 143,\n        \"weather_icons\": [\n            \"https://cdn.worldweatheronline.com/images/wsymbols01_png_64/wsymbol_0006_mist.png\"\n        ],\n        \"weather_descriptions\": [\n            \"Haze\"\n        ],\n        \"wind_speed\": 11,\n        \"wind_degree\": 290,\n        \"wind_dir\": \"WNW\",\n        \"pressure\": 1012,\n        \"precip\": 0,\n        \"humidity\": 25,\n        \"cloudcover\": 0,\n        \"feelslike\": 26,\n        \"uv_index\": 7,\n        \"visibility\": 5,\n        \"is_day\": \"yes\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Multiple current locations",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.weatherstack.com/current?query=London;Singapur;Shanghai",
+							"protocol": "https",
+							"host": [
+								"api",
+								"weatherstack",
+								"com"
+							],
+							"path": [
+								"current"
+							],
+							"query": [
+								{
+									"key": "query",
+									"value": "London;Singapur;Shanghai",
+									"description": "[Required] Use this parameter to pass a single location or multiple semicolon-separated location identifiers to the API. Learn more about the Query Parameter.\n"
+								}
+							]
+						},
+						"description": "To make use of the API's bulk query capability, you can also pass multiple semicolon-separated locations to the API."
+					},
+					"response": [
+						{
+							"name": "200 OK – Multiple current locations",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://api.weatherstack.com/current?access_key={PASTE_YOUR_API_KEY_HERE}&query=London;Singapur;Shanghai",
+									"protocol": "https",
+									"host": [
+										"api",
+										"weatherstack",
+										"com"
+									],
+									"path": [
+										"current"
+									],
+									"query": [
+										{
+											"key": "access_key",
+											"value": "{PASTE_YOUR_API_KEY_HERE}",
+											"description": "[Required] Specify your API access key, available in your account dashboard.\n"
+										},
+										{
+											"key": "query",
+											"value": "London;Singapur;Shanghai",
+											"description": "[Required] Use this parameter to pass a single location or multiple semicolon-separated location identifiers to the API. Learn more about the Query Parameter.\n"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 18 Mar 2024 12:57:55 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; Charset=UTF-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "x-apilayer-transaction-id",
+									"value": "637b647e-2198-4b1d-8627-b2192238fc68"
+								},
+								{
+									"key": "access-control-allow-methods",
+									"value": "GET, HEAD, POST, PUT, PATCH, DELETE, OPTIONS"
+								},
+								{
+									"key": "access-control-allow-origin",
+									"value": "*"
+								},
+								{
+									"key": "x-request-time",
+									"value": "0.158"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Report-To",
+									"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=NfjMTuqBY5vm6YPRq9ikPZnJMo30nyUyS7rR7bnT1NcNGLBvIGZPQ3%2B2us9dPCM%2BO79HuhfW5tAvwv%2F4KjziuUVmbWidTCxNaruon5sZDIvoP4QXSrl7Bj7JLDRp4Mkw449Uz%2BWZ\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "NEL",
+									"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "CF-RAY",
+									"value": "866564233945a739-IXC"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"request\": {\n            \"type\": \"City\",\n            \"query\": \"London, United Kingdom\",\n            \"language\": \"en\",\n            \"unit\": \"m\"\n        },\n        \"location\": {\n            \"name\": \"London\",\n            \"country\": \"United Kingdom\",\n            \"region\": \"City of London, Greater London\",\n            \"lat\": \"51.517\",\n            \"lon\": \"-0.106\",\n            \"timezone_id\": \"Europe/London\",\n            \"localtime\": \"2024-03-18 12:55\",\n            \"localtime_epoch\": 1710766500,\n            \"utc_offset\": \"0.0\"\n        },\n        \"current\": {\n            \"observation_time\": \"12:55 PM\",\n            \"temperature\": 13,\n            \"weather_code\": 122,\n            \"weather_icons\": [\n                \"https://cdn.worldweatheronline.com/images/wsymbols01_png_64/wsymbol_0004_black_low_cloud.png\"\n            ],\n            \"weather_descriptions\": [\n                \"Overcast\"\n            ],\n            \"wind_speed\": 19,\n            \"wind_degree\": 210,\n            \"wind_dir\": \"SSW\",\n            \"pressure\": 1015,\n            \"precip\": 0,\n            \"humidity\": 82,\n            \"cloudcover\": 50,\n            \"feelslike\": 12,\n            \"uv_index\": 3,\n            \"visibility\": 10,\n            \"is_day\": \"yes\"\n        }\n    },\n    {\n        \"request\": {\n            \"type\": \"City\",\n            \"query\": \"Singapur, Mexico\",\n            \"language\": \"en\",\n            \"unit\": \"m\"\n        },\n        \"location\": {\n            \"name\": \"Singapur\",\n            \"country\": \"Mexico\",\n            \"region\": \"Sonora\",\n            \"lat\": \"27.445\",\n            \"lon\": \"-110.234\",\n            \"timezone_id\": \"America/Hermosillo\",\n            \"localtime\": \"2024-03-18 05:56\",\n            \"localtime_epoch\": 1710741360,\n            \"utc_offset\": \"-7.0\"\n        },\n        \"current\": {\n            \"observation_time\": \"12:56 PM\",\n            \"temperature\": 17,\n            \"weather_code\": 113,\n            \"weather_icons\": [\n                \"https://cdn.worldweatheronline.com/images/wsymbols01_png_64/wsymbol_0008_clear_sky_night.png\"\n            ],\n            \"weather_descriptions\": [\n                \"Clear \"\n            ],\n            \"wind_speed\": 20,\n            \"wind_degree\": 322,\n            \"wind_dir\": \"NW\",\n            \"pressure\": 1013,\n            \"precip\": 0,\n            \"humidity\": 56,\n            \"cloudcover\": 21,\n            \"feelslike\": 17,\n            \"uv_index\": 1,\n            \"visibility\": 10,\n            \"is_day\": \"no\"\n        }\n    },\n    {\n        \"request\": {\n            \"type\": \"City\",\n            \"query\": \"Shanghai, China\",\n            \"language\": \"en\",\n            \"unit\": \"m\"\n        },\n        \"location\": {\n            \"name\": \"Shanghai\",\n            \"country\": \"China\",\n            \"region\": \"Shanghai\",\n            \"lat\": \"31.005\",\n            \"lon\": \"121.409\",\n            \"timezone_id\": \"Asia/Shanghai\",\n            \"localtime\": \"2024-03-18 20:56\",\n            \"localtime_epoch\": 1710795360,\n            \"utc_offset\": \"8.0\"\n        },\n        \"current\": {\n            \"observation_time\": \"12:56 PM\",\n            \"temperature\": 8,\n            \"weather_code\": 296,\n            \"weather_icons\": [\n                \"https://cdn.worldweatheronline.com/images/wsymbols01_png_64/wsymbol_0033_cloudy_with_light_rain_night.png\"\n            ],\n            \"weather_descriptions\": [\n                \"Light Rain Shower\"\n            ],\n            \"wind_speed\": 15,\n            \"wind_degree\": 20,\n            \"wind_dir\": \"NNE\",\n            \"pressure\": 1023,\n            \"precip\": 0,\n            \"humidity\": 87,\n            \"cloudcover\": 75,\n            \"feelslike\": 7,\n            \"uv_index\": 1,\n            \"visibility\": 10,\n            \"is_day\": \"no\"\n        }\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Location Identifiers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.weatherstack.com/current?query=40.7831,-73.9712",
+							"protocol": "https",
+							"host": [
+								"api",
+								"weatherstack",
+								"com"
+							],
+							"path": [
+								"current"
+							],
+							"query": [
+								{
+									"key": "query",
+									"value": "40.7831,-73.9712",
+									"description": "Pass latitude and longitude coordinates to the API and auto-detect the associated location.\n"
+								}
+							]
+						},
+						"description": "Aside from simply passing the name of a city, there are multiple other ways of passing a location to the API:\n\n| Definition | Example | Description |\n| --- | --- | --- |\n| Location Name | `query = New York` | The standard way of passing a location name to the API. |\n| UK/Canada/US ZIP Code | `query = 99501` | Pass a UK/Canada/US ZIP code to the API and auto-detect the associated location. |\n| Coordinates (Lat/Lon) | `query = 40.7831,-73.9712` | Pass latitude and longitude coordinates to the API and auto-detect the associated location. |\n| IP Address | `query = 153.65.8.20` | Pass an IP address to the API and auto-detect the associated location. |\n| IP Address (Auto-Fetch) | `query = fetch:ip` | Pass `fetch:ip` to the API in order to auto-detect the requester IP address and location. |"
+					},
+					"response": [
+						{
+							"name": "200 OK – Location Identifiers",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://api.weatherstack.com/current?access_key={PASTE_YOUR_API_KEY_HERE}&query=40.7831,-73.9712",
+									"protocol": "https",
+									"host": [
+										"api",
+										"weatherstack",
+										"com"
+									],
+									"path": [
+										"current"
+									],
+									"query": [
+										{
+											"key": "access_key",
+											"value": "{PASTE_YOUR_API_KEY_HERE}",
+											"description": "[Required] Specify your API access key, available in your account dashboard.\n"
+										},
+										{
+											"key": "query",
+											"value": "40.7831,-73.9712",
+											"description": "Pass latitude and longitude coordinates to the API and auto-detect the associated location.\n"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 18 Mar 2024 13:00:35 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; Charset=UTF-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "x-apilayer-transaction-id",
+									"value": "9678357b-46f9-472b-96ee-ec65a6c1ed21"
+								},
+								{
+									"key": "access-control-allow-methods",
+									"value": "GET, HEAD, POST, PUT, PATCH, DELETE, OPTIONS"
+								},
+								{
+									"key": "access-control-allow-origin",
+									"value": "*"
+								},
+								{
+									"key": "x-request-time",
+									"value": "0.124"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Report-To",
+									"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=8fZ2Yu1uWlHcoMH96zmD82vyt11GCaaUWcY8wZ2Q22PnQjxB%2BFHsk%2Fu%2FyyjcJ8NipR%2FsgvKXPp6BGd4L4ERBPcr8MsfFolBuaZCo6H0ropgCXpbQOzalZkxv0avFfDxrbBhul%2FRT\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "NEL",
+									"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "CF-RAY",
+									"value": "8665680f89afa739-IXC"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"request\": {\n        \"type\": \"LatLon\",\n        \"query\": \"Lat 40.78 and Lon -73.97\",\n        \"language\": \"en\",\n        \"unit\": \"m\"\n    },\n    \"location\": {\n        \"name\": \"Guttenberg\",\n        \"country\": \"United States of America\",\n        \"region\": \"New Jersey\",\n        \"lat\": \"40.792\",\n        \"lon\": \"-74.004\",\n        \"timezone_id\": \"America/New_York\",\n        \"localtime\": \"2024-03-18 08:59\",\n        \"localtime_epoch\": 1710752340,\n        \"utc_offset\": \"-4.0\"\n    },\n    \"current\": {\n        \"observation_time\": \"12:59 PM\",\n        \"temperature\": 6,\n        \"weather_code\": 113,\n        \"weather_icons\": [\n            \"https://cdn.worldweatheronline.com/images/wsymbols01_png_64/wsymbol_0001_sunny.png\"\n        ],\n        \"weather_descriptions\": [\n            \"Sunny\"\n        ],\n        \"wind_speed\": 4,\n        \"wind_degree\": 297,\n        \"wind_dir\": \"WNW\",\n        \"pressure\": 1008,\n        \"precip\": 0,\n        \"humidity\": 45,\n        \"cloudcover\": 0,\n        \"feelslike\": 3,\n        \"uv_index\": 2,\n        \"visibility\": 16,\n        \"is_day\": \"yes\"\n    }\n}"
+						}
+					]
+				}
+			],
+			"description": "Current endpoint let you fetch the weather stats of the metioned location in the `query` parameter."
+		},
+		{
+			"name": "Historical",
+			"item": [
+				{
+					"name": "Historical data",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.weatherstack.com/historical?query=New York&historical_date=2015-01-21&hourly=1",
+							"protocol": "https",
+							"host": [
+								"api",
+								"weatherstack",
+								"com"
+							],
+							"path": [
+								"historical"
+							],
+							"query": [
+								{
+									"key": "query",
+									"value": "New York",
+									"description": "[Required] Use this parameter to pass a single location or multiple semicolon-separated location identifiers to the API. Learn more about the Query Parameter.\n"
+								},
+								{
+									"key": "historical_date",
+									"value": "2015-01-21",
+									"description": "[Required] Use this parameter to pass one historical date or multiple semicolon-separated dates to the API. (Example: 2015-01-21 for a single date or 2015-01-21;2015-01-22 for multiple dates)\n"
+								},
+								{
+									"key": "hourly",
+									"value": "1"
+								}
+							]
+						},
+						"description": "To look up historical weather data all the way back to 2008, simply pass one date of your choice (later than July 2008) or multiple semicolon-separated dates to the weatherstack API's `historical` endpoint using the `historical_date` parameter."
+					},
+					"response": [
+						{
+							"name": "200 OK – Historical data",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://api.weatherstack.com/historical?access_key={PASTE_YOUR_API_KEY_HERE}&query=New York&historical_date=2015-01-21",
+									"protocol": "https",
+									"host": [
+										"api",
+										"weatherstack",
+										"com"
+									],
+									"path": [
+										"historical"
+									],
+									"query": [
+										{
+											"key": "access_key",
+											"value": "{PASTE_YOUR_API_KEY_HERE}",
+											"description": "[Required] Specify your API access key, available in your account dashboard.\n"
+										},
+										{
+											"key": "query",
+											"value": "New York",
+											"description": "[Required] Use this parameter to pass a single location or multiple semicolon-separated location identifiers to the API. Learn more about the Query Parameter.\n"
+										},
+										{
+											"key": "historical_date",
+											"value": "2015-01-21",
+											"description": "[Required] Use this parameter to pass one historical date or multiple semicolon-separated dates to the API. (Example: 2015-01-21 for a single date or 2015-01-21;2015-01-22 for multiple dates)\n"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 18 Mar 2024 12:40:33 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; Charset=UTF-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "x-apilayer-transaction-id",
+									"value": "49df830d-ca9f-4ff2-a44e-e2ebad846222"
+								},
+								{
+									"key": "access-control-allow-methods",
+									"value": "GET, HEAD, POST, PUT, PATCH, DELETE, OPTIONS"
+								},
+								{
+									"key": "access-control-allow-origin",
+									"value": "*"
+								},
+								{
+									"key": "x-request-time",
+									"value": "0.234"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Report-To",
+									"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=UZsGsiJB29gnVU%2FEUyFV3LEfx80%2Bs2IhfAWirvly8cO4PX9zeDPacEQPe2xWMvT0WuHv2G7g3zB%2F89BmsFFBIIWgk73NEhP10zhAHNHUA41bWavUCpk0txqWkQoBcmJo41bmL%2FfF\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "NEL",
+									"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "CF-RAY",
+									"value": "86654ab5fba9a739-IXC"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"request\": {\n        \"type\": \"City\",\n        \"query\": \"New York, United States of America\",\n        \"language\": \"en\",\n        \"unit\": \"m\"\n    },\n    \"location\": {\n        \"name\": \"New York\",\n        \"country\": \"United States of America\",\n        \"region\": \"New York\",\n        \"lat\": \"40.714\",\n        \"lon\": \"-74.006\",\n        \"timezone_id\": \"America/New_York\",\n        \"localtime\": \"2024-03-18 08:39\",\n        \"localtime_epoch\": 1710751140,\n        \"utc_offset\": \"-4.0\"\n    },\n    \"current\": {\n        \"observation_time\": \"12:39 PM\",\n        \"temperature\": 6,\n        \"weather_code\": 113,\n        \"weather_icons\": [\n            \"https://cdn.worldweatheronline.com/images/wsymbols01_png_64/wsymbol_0001_sunny.png\"\n        ],\n        \"weather_descriptions\": [\n            \"Sunny\"\n        ],\n        \"wind_speed\": 4,\n        \"wind_degree\": 285,\n        \"wind_dir\": \"WNW\",\n        \"pressure\": 1008,\n        \"precip\": 0,\n        \"humidity\": 45,\n        \"cloudcover\": 0,\n        \"feelslike\": 2,\n        \"uv_index\": 2,\n        \"visibility\": 16,\n        \"is_day\": \"yes\"\n    },\n    \"historical\": {\n        \"2015-01-21\": {\n            \"date\": \"2015-01-21\",\n            \"date_epoch\": 1421798400,\n            \"astro\": {\n                \"sunrise\": \"07:15 AM\",\n                \"sunset\": \"05:00 PM\",\n                \"moonrise\": \"07:42 AM\",\n                \"moonset\": \"06:46 PM\",\n                \"moon_phase\": \"Waxing Crescent\",\n                \"moon_illumination\": 3\n            },\n            \"mintemp\": -4,\n            \"maxtemp\": 1,\n            \"avgtemp\": -1,\n            \"totalsnow\": 0,\n            \"sunhour\": 3,\n            \"uv_index\": 2\n        }\n    }\n}"
+						},
+						{
+							"name": "200 OK – Hourly Historical data",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://api.weatherstack.com/historical?access_key={PASTE_YOUR_API_KEY_HERE}&query=New York&historical_date=2015-01-21&hourly=1",
+									"protocol": "https",
+									"host": [
+										"api",
+										"weatherstack",
+										"com"
+									],
+									"path": [
+										"historical"
+									],
+									"query": [
+										{
+											"key": "access_key",
+											"value": "{PASTE_YOUR_API_KEY_HERE}",
+											"description": "[Required] Specify your API access key, available in your account dashboard.\n"
+										},
+										{
+											"key": "query",
+											"value": "New York",
+											"description": "[Required] Use this parameter to pass a single location or multiple semicolon-separated location identifiers to the API. Learn more about the Query Parameter.\n"
+										},
+										{
+											"key": "historical_date",
+											"value": "2015-01-21",
+											"description": "[Required] Use this parameter to pass one historical date or multiple semicolon-separated dates to the API. (Example: 2015-01-21 for a single date or 2015-01-21;2015-01-22 for multiple dates)\n"
+										},
+										{
+											"key": "hourly",
+											"value": "1",
+											"description": "[Optional] Set this parameter to 1 (on) or 0 (off) depending on whether or not you want the API to return weather data split hourly. (Default: 0 - off)\n"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 18 Mar 2024 12:42:13 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; Charset=UTF-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "x-apilayer-transaction-id",
+									"value": "524a8c72-b7c2-4c1e-afb2-3e96f7c42a16"
+								},
+								{
+									"key": "access-control-allow-methods",
+									"value": "GET, HEAD, POST, PUT, PATCH, DELETE, OPTIONS"
+								},
+								{
+									"key": "access-control-allow-origin",
+									"value": "*"
+								},
+								{
+									"key": "x-request-time",
+									"value": "0.158"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Report-To",
+									"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=qze%2BTtfITnCGZSjTuldupjFeTG2HePaohqu%2B2Db8M2tQXWYsG4H3FL3hWZMBdMZT3dRYfgCCEb%2F1eRvSc4c5A0205zkZmdHofGAXvSZrRoKjILl%2FywCxeEreAbPtb%2Bl57iWXU2aw\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "NEL",
+									"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "CF-RAY",
+									"value": "86654d256ffca739-IXC"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"request\": {\n        \"type\": \"City\",\n        \"query\": \"New York, United States of America\",\n        \"language\": \"en\",\n        \"unit\": \"m\"\n    },\n    \"location\": {\n        \"name\": \"New York\",\n        \"country\": \"United States of America\",\n        \"region\": \"New York\",\n        \"lat\": \"40.714\",\n        \"lon\": \"-74.006\",\n        \"timezone_id\": \"America/New_York\",\n        \"localtime\": \"2024-03-18 08:42\",\n        \"localtime_epoch\": 1710751320,\n        \"utc_offset\": \"-4.0\"\n    },\n    \"current\": {\n        \"observation_time\": \"12:42 PM\",\n        \"temperature\": 6,\n        \"weather_code\": 113,\n        \"weather_icons\": [\n            \"https://cdn.worldweatheronline.com/images/wsymbols01_png_64/wsymbol_0001_sunny.png\"\n        ],\n        \"weather_descriptions\": [\n            \"Sunny\"\n        ],\n        \"wind_speed\": 4,\n        \"wind_degree\": 285,\n        \"wind_dir\": \"WNW\",\n        \"pressure\": 1008,\n        \"precip\": 0,\n        \"humidity\": 45,\n        \"cloudcover\": 0,\n        \"feelslike\": 2,\n        \"uv_index\": 2,\n        \"visibility\": 16,\n        \"is_day\": \"yes\"\n    },\n    \"historical\": {\n        \"2015-01-21\": {\n            \"date\": \"2015-01-21\",\n            \"date_epoch\": 1421798400,\n            \"astro\": {\n                \"sunrise\": \"07:15 AM\",\n                \"sunset\": \"05:00 PM\",\n                \"moonrise\": \"07:42 AM\",\n                \"moonset\": \"06:46 PM\",\n                \"moon_phase\": \"Waxing Crescent\",\n                \"moon_illumination\": 3\n            },\n            \"mintemp\": -4,\n            \"maxtemp\": 1,\n            \"avgtemp\": -1,\n            \"totalsnow\": 0,\n            \"sunhour\": 3,\n            \"uv_index\": 2,\n            \"hourly\": [\n                {\n                    \"time\": \"0\",\n                    \"temperature\": -2,\n                    \"wind_speed\": 12,\n                    \"wind_degree\": 330,\n                    \"wind_dir\": \"NNW\",\n                    \"weather_code\": 113,\n                    \"weather_icons\": [\n                        \"https://cdn.worldweatheronline.com/images/wsymbols01_png_64/wsymbol_0008_clear_sky_night.png\"\n                    ],\n                    \"weather_descriptions\": [\n                        \"Clear\"\n                    ],\n                    \"precip\": 0,\n                    \"humidity\": 63,\n                    \"visibility\": 10,\n                    \"pressure\": 1019,\n                    \"cloudcover\": 4,\n                    \"heatindex\": -2,\n                    \"dewpoint\": -7,\n                    \"windchill\": -7,\n                    \"windgust\": 16,\n                    \"feelslike\": -7,\n                    \"chanceofrain\": 0,\n                    \"chanceofremdry\": 0,\n                    \"chanceofwindy\": 0,\n                    \"chanceofovercast\": 0,\n                    \"chanceofsunshine\": 0,\n                    \"chanceoffrost\": 0,\n                    \"chanceofhightemp\": 0,\n                    \"chanceoffog\": 0,\n                    \"chanceofsnow\": 0,\n                    \"chanceofthunder\": 0,\n                    \"uv_index\": 1\n                },\n                {\n                    \"time\": \"300\",\n                    \"temperature\": -3,\n                    \"wind_speed\": 13,\n                    \"wind_degree\": 19,\n                    \"wind_dir\": \"NNE\",\n                    \"weather_code\": 113,\n                    \"weather_icons\": [\n                        \"https://cdn.worldweatheronline.com/images/wsymbols01_png_64/wsymbol_0008_clear_sky_night.png\"\n                    ],\n                    \"weather_descriptions\": [\n                        \"Clear\"\n                    ],\n                    \"precip\": 0,\n                    \"humidity\": 68,\n                    \"visibility\": 10,\n                    \"pressure\": 1020,\n                    \"cloudcover\": 4,\n                    \"heatindex\": -3,\n                    \"dewpoint\": -6,\n                    \"windchill\": -7,\n                    \"windgust\": 16,\n                    \"feelslike\": -7,\n                    \"chanceofrain\": 0,\n                    \"chanceofremdry\": 0,\n                    \"chanceofwindy\": 0,\n                    \"chanceofovercast\": 0,\n                    \"chanceofsunshine\": 0,\n                    \"chanceoffrost\": 0,\n                    \"chanceofhightemp\": 0,\n                    \"chanceoffog\": 0,\n                    \"chanceofsnow\": 0,\n                    \"chanceofthunder\": 0,\n                    \"uv_index\": 1\n                },\n                {\n                    \"time\": \"600\",\n                    \"temperature\": -4,\n                    \"wind_speed\": 10,\n                    \"wind_degree\": 13,\n                    \"wind_dir\": \"NNE\",\n                    \"weather_code\": 113,\n                    \"weather_icons\": [\n                        \"https://cdn.worldweatheronline.com/images/wsymbols01_png_64/wsymbol_0001_sunny.png\"\n                    ],\n                    \"weather_descriptions\": [\n                        \"Sunny\"\n                    ],\n                    \"precip\": 0,\n                    \"humidity\": 57,\n                    \"visibility\": 10,\n                    \"pressure\": 1021,\n                    \"cloudcover\": 8,\n                    \"heatindex\": -4,\n                    \"dewpoint\": -9,\n                    \"windchill\": -8,\n                    \"windgust\": 12,\n                    \"feelslike\": -8,\n                    \"chanceofrain\": 0,\n                    \"chanceofremdry\": 0,\n                    \"chanceofwindy\": 0,\n                    \"chanceofovercast\": 0,\n                    \"chanceofsunshine\": 0,\n                    \"chanceoffrost\": 0,\n                    \"chanceofhightemp\": 0,\n                    \"chanceoffog\": 0,\n                    \"chanceofsnow\": 0,\n                    \"chanceofthunder\": 0,\n                    \"uv_index\": 2\n                },\n                {\n                    \"time\": \"900\",\n                    \"temperature\": -2,\n                    \"wind_speed\": 11,\n                    \"wind_degree\": 26,\n                    \"wind_dir\": \"NNE\",\n                    \"weather_code\": 119,\n                    \"weather_icons\": [\n                        \"https://cdn.worldweatheronline.com/images/wsymbols01_png_64/wsymbol_0003_white_cloud.png\"\n                    ],\n                    \"weather_descriptions\": [\n                        \"Cloudy\"\n                    ],\n                    \"precip\": 0,\n                    \"humidity\": 40,\n                    \"visibility\": 10,\n                    \"pressure\": 1022,\n                    \"cloudcover\": 71,\n                    \"heatindex\": -2,\n                    \"dewpoint\": -14,\n                    \"windchill\": -6,\n                    \"windgust\": 13,\n                    \"feelslike\": -6,\n                    \"chanceofrain\": 0,\n                    \"chanceofremdry\": 0,\n                    \"chanceofwindy\": 0,\n                    \"chanceofovercast\": 0,\n                    \"chanceofsunshine\": 0,\n                    \"chanceoffrost\": 0,\n                    \"chanceofhightemp\": 0,\n                    \"chanceoffog\": 0,\n                    \"chanceofsnow\": 0,\n                    \"chanceofthunder\": 0,\n                    \"uv_index\": 1\n                },\n                {\n                    \"time\": \"1200\",\n                    \"temperature\": 1,\n                    \"wind_speed\": 5,\n                    \"wind_degree\": 43,\n                    \"wind_dir\": \"NE\",\n                    \"weather_code\": 122,\n                    \"weather_icons\": [\n                        \"https://cdn.worldweatheronline.com/images/wsymbols01_png_64/wsymbol_0004_black_low_cloud.png\"\n                    ],\n                    \"weather_descriptions\": [\n                        \"Overcast\"\n                    ],\n                    \"precip\": 0,\n                    \"humidity\": 33,\n                    \"visibility\": 10,\n                    \"pressure\": 1021,\n                    \"cloudcover\": 90,\n                    \"heatindex\": 1,\n                    \"dewpoint\": -14,\n                    \"windchill\": -1,\n                    \"windgust\": 6,\n                    \"feelslike\": -1,\n                    \"chanceofrain\": 0,\n                    \"chanceofremdry\": 0,\n                    \"chanceofwindy\": 0,\n                    \"chanceofovercast\": 0,\n                    \"chanceofsunshine\": 0,\n                    \"chanceoffrost\": 0,\n                    \"chanceofhightemp\": 0,\n                    \"chanceoffog\": 0,\n                    \"chanceofsnow\": 0,\n                    \"chanceofthunder\": 0,\n                    \"uv_index\": 1\n                },\n                {\n                    \"time\": \"1500\",\n                    \"temperature\": 1,\n                    \"wind_speed\": 2,\n                    \"wind_degree\": 37,\n                    \"wind_dir\": \"NE\",\n                    \"weather_code\": 119,\n                    \"weather_icons\": [\n                        \"https://cdn.worldweatheronline.com/images/wsymbols01_png_64/wsymbol_0003_white_cloud.png\"\n                    ],\n                    \"weather_descriptions\": [\n                        \"Cloudy\"\n                    ],\n                    \"precip\": 0,\n                    \"humidity\": 38,\n                    \"visibility\": 10,\n                    \"pressure\": 1021,\n                    \"cloudcover\": 78,\n                    \"heatindex\": 1,\n                    \"dewpoint\": -12,\n                    \"windchill\": 1,\n                    \"windgust\": 6,\n                    \"feelslike\": 1,\n                    \"chanceofrain\": 0,\n                    \"chanceofremdry\": 0,\n                    \"chanceofwindy\": 0,\n                    \"chanceofovercast\": 0,\n                    \"chanceofsunshine\": 0,\n                    \"chanceoffrost\": 0,\n                    \"chanceofhightemp\": 0,\n                    \"chanceoffog\": 0,\n                    \"chanceofsnow\": 0,\n                    \"chanceofthunder\": 0,\n                    \"uv_index\": 1\n                },\n                {\n                    \"time\": \"1800\",\n                    \"temperature\": 0,\n                    \"wind_speed\": 3,\n                    \"wind_degree\": 58,\n                    \"wind_dir\": \"ENE\",\n                    \"weather_code\": 119,\n                    \"weather_icons\": [\n                        \"https://cdn.worldweatheronline.com/images/wsymbols01_png_64/wsymbol_0003_white_cloud.png\"\n                    ],\n                    \"weather_descriptions\": [\n                        \"Cloudy\"\n                    ],\n                    \"precip\": 0,\n                    \"humidity\": 48,\n                    \"visibility\": 10,\n                    \"pressure\": 1021,\n                    \"cloudcover\": 67,\n                    \"heatindex\": 0,\n                    \"dewpoint\": -10,\n                    \"windchill\": 0,\n                    \"windgust\": 4,\n                    \"feelslike\": 0,\n                    \"chanceofrain\": 0,\n                    \"chanceofremdry\": 0,\n                    \"chanceofwindy\": 0,\n                    \"chanceofovercast\": 0,\n                    \"chanceofsunshine\": 0,\n                    \"chanceoffrost\": 0,\n                    \"chanceofhightemp\": 0,\n                    \"chanceoffog\": 0,\n                    \"chanceofsnow\": 0,\n                    \"chanceofthunder\": 0,\n                    \"uv_index\": 1\n                },\n                {\n                    \"time\": \"2100\",\n                    \"temperature\": -1,\n                    \"wind_speed\": 8,\n                    \"wind_degree\": 49,\n                    \"wind_dir\": \"NE\",\n                    \"weather_code\": 122,\n                    \"weather_icons\": [\n                        \"https://cdn.worldweatheronline.com/images/wsymbols01_png_64/wsymbol_0004_black_low_cloud.png\"\n                    ],\n                    \"weather_descriptions\": [\n                        \"Overcast\"\n                    ],\n                    \"precip\": 0,\n                    \"humidity\": 62,\n                    \"visibility\": 5,\n                    \"pressure\": 1022,\n                    \"cloudcover\": 100,\n                    \"heatindex\": -1,\n                    \"dewpoint\": -7,\n                    \"windchill\": -4,\n                    \"windgust\": 10,\n                    \"feelslike\": -4,\n                    \"chanceofrain\": 0,\n                    \"chanceofremdry\": 0,\n                    \"chanceofwindy\": 0,\n                    \"chanceofovercast\": 0,\n                    \"chanceofsunshine\": 0,\n                    \"chanceoffrost\": 0,\n                    \"chanceofhightemp\": 0,\n                    \"chanceoffog\": 0,\n                    \"chanceofsnow\": 0,\n                    \"chanceofthunder\": 0,\n                    \"uv_index\": 1\n                }\n            ]\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Historical time series",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.weatherstack.com/historical?query=New York&historical_date_start=2015-01-21&historical_date_end=2015-01-25",
+							"protocol": "https",
+							"host": [
+								"api",
+								"weatherstack",
+								"com"
+							],
+							"path": [
+								"historical"
+							],
+							"query": [
+								{
+									"key": "query",
+									"value": "New York",
+									"description": "[Required] Use this parameter to pass a single location or multiple semicolon-separated location identifiers to the API. Learn more about the Query Parameter.\n"
+								},
+								{
+									"key": "historical_date_start",
+									"value": "2015-01-21",
+									"description": "[Required] Use this parameter to pass a start date for the current historical time-series request.\n"
+								},
+								{
+									"key": "historical_date_end",
+									"value": "2015-01-25",
+									"description": "[Required] Use this parameter to pass an end date for the current historical time-series request.\n"
+								}
+							]
+						},
+						"description": "The `historical` endpoint is also capable of processing historical time-series results if the parameters `historical_date_start` and `historical_date_end` are set to valid dates."
+					},
+					"response": [
+						{
+							"name": "200 OK – Historical time series",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://api.weatherstack.com/historical?access_key={PASTE_YOUR_API_KEY_HERE}&query=New York&historical_date_start=2015-01-21&historical_date_end=2015-01-25",
+									"protocol": "https",
+									"host": [
+										"api",
+										"weatherstack",
+										"com"
+									],
+									"path": [
+										"historical"
+									],
+									"query": [
+										{
+											"key": "access_key",
+											"value": "{PASTE_YOUR_API_KEY_HERE}",
+											"description": "[Required] Your API access key, which can be found in your acccount dashboard.\n"
+										},
+										{
+											"key": "query",
+											"value": "New York",
+											"description": "[Required] Use this parameter to pass a single location or multiple semicolon-separated location identifiers to the API. Learn more about the Query Parameter.\n"
+										},
+										{
+											"key": "historical_date_start",
+											"value": "2015-01-21",
+											"description": "[Required] Use this parameter to pass a start date for the current historical time-series request.\n"
+										},
+										{
+											"key": "historical_date_end",
+											"value": "2015-01-25",
+											"description": "[Required] Use this parameter to pass an end date for the current historical time-series request.\n"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 18 Mar 2024 12:48:48 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; Charset=UTF-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "x-apilayer-transaction-id",
+									"value": "e2f974bf-e3de-4bb1-8618-d7cb20e0b717"
+								},
+								{
+									"key": "access-control-allow-methods",
+									"value": "GET, HEAD, POST, PUT, PATCH, DELETE, OPTIONS"
+								},
+								{
+									"key": "access-control-allow-origin",
+									"value": "*"
+								},
+								{
+									"key": "x-request-time",
+									"value": "0.186"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Report-To",
+									"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=VqzFreRPvzjCc07n3RwUQlhXHWNs4Ley7KU7YaqbiZEfowMUWRBd5XDqqd2%2BnIxC9zDCqp2rSodYX2P4UjCsBmC3nPuUzqh2VO%2FVNec4ITt1DKTKyrfgeL3C2%2FqeM1%2Fc4aEqAuzc\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "NEL",
+									"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "CF-RAY",
+									"value": "866556c6f96aa739-IXC"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"request\": {\n        \"type\": \"City\",\n        \"query\": \"New York, United States of America\",\n        \"language\": \"en\",\n        \"unit\": \"m\"\n    },\n    \"location\": {\n        \"name\": \"New York\",\n        \"country\": \"United States of America\",\n        \"region\": \"New York\",\n        \"lat\": \"40.714\",\n        \"lon\": \"-74.006\",\n        \"timezone_id\": \"America/New_York\",\n        \"localtime\": \"2024-03-18 08:47\",\n        \"localtime_epoch\": 1710751620,\n        \"utc_offset\": \"-4.0\"\n    },\n    \"current\": {\n        \"observation_time\": \"12:47 PM\",\n        \"temperature\": 6,\n        \"weather_code\": 113,\n        \"weather_icons\": [\n            \"https://cdn.worldweatheronline.com/images/wsymbols01_png_64/wsymbol_0001_sunny.png\"\n        ],\n        \"weather_descriptions\": [\n            \"Sunny\"\n        ],\n        \"wind_speed\": 4,\n        \"wind_degree\": 296,\n        \"wind_dir\": \"WNW\",\n        \"pressure\": 1008,\n        \"precip\": 0,\n        \"humidity\": 45,\n        \"cloudcover\": 0,\n        \"feelslike\": 3,\n        \"uv_index\": 3,\n        \"visibility\": 16,\n        \"is_day\": \"yes\"\n    },\n    \"historical\": {\n        \"2015-01-21\": {\n            \"date\": \"2015-01-21\",\n            \"date_epoch\": 1421798400,\n            \"astro\": {\n                \"sunrise\": \"07:15 AM\",\n                \"sunset\": \"05:00 PM\",\n                \"moonrise\": \"07:42 AM\",\n                \"moonset\": \"06:46 PM\",\n                \"moon_phase\": \"Waxing Crescent\",\n                \"moon_illumination\": 3\n            },\n            \"mintemp\": -4,\n            \"maxtemp\": 1,\n            \"avgtemp\": -1,\n            \"totalsnow\": 0,\n            \"sunhour\": 3,\n            \"uv_index\": 2\n        },\n        \"2015-01-22\": {\n            \"date\": \"2015-01-22\",\n            \"date_epoch\": 1421884800,\n            \"astro\": {\n                \"sunrise\": \"07:15 AM\",\n                \"sunset\": \"05:01 PM\",\n                \"moonrise\": \"08:23 AM\",\n                \"moonset\": \"07:59 PM\",\n                \"moon_phase\": \"Waxing Crescent\",\n                \"moon_illumination\": 10\n            },\n            \"mintemp\": -1,\n            \"maxtemp\": 3,\n            \"avgtemp\": 0,\n            \"totalsnow\": 0,\n            \"sunhour\": 7,\n            \"uv_index\": 1\n        },\n        \"2015-01-23\": {\n            \"date\": \"2015-01-23\",\n            \"date_epoch\": 1421971200,\n            \"astro\": {\n                \"sunrise\": \"07:14 AM\",\n                \"sunset\": \"05:02 PM\",\n                \"moonrise\": \"09:02 AM\",\n                \"moonset\": \"09:11 PM\",\n                \"moon_phase\": \"Waxing Crescent\",\n                \"moon_illumination\": 18\n            },\n            \"mintemp\": -3,\n            \"maxtemp\": 3,\n            \"avgtemp\": 0,\n            \"totalsnow\": 0,\n            \"sunhour\": 10,\n            \"uv_index\": 2\n        },\n        \"2015-01-24\": {\n            \"date\": \"2015-01-24\",\n            \"date_epoch\": 1422057600,\n            \"astro\": {\n                \"sunrise\": \"07:13 AM\",\n                \"sunset\": \"05:04 PM\",\n                \"moonrise\": \"09:39 AM\",\n                \"moonset\": \"10:21 PM\",\n                \"moon_phase\": \"Waxing Crescent\",\n                \"moon_illumination\": 25\n            },\n            \"mintemp\": -1,\n            \"maxtemp\": 2,\n            \"avgtemp\": 1,\n            \"totalsnow\": 21,\n            \"sunhour\": 3,\n            \"uv_index\": 1\n        },\n        \"2015-01-25\": {\n            \"date\": \"2015-01-25\",\n            \"date_epoch\": 1422144000,\n            \"astro\": {\n                \"sunrise\": \"07:12 AM\",\n                \"sunset\": \"05:05 PM\",\n                \"moonrise\": \"10:15 AM\",\n                \"moonset\": \"11:30 PM\",\n                \"moon_phase\": \"Waxing Crescent\",\n                \"moon_illumination\": 32\n            },\n            \"mintemp\": -3,\n            \"maxtemp\": 3,\n            \"avgtemp\": -1,\n            \"totalsnow\": 0,\n            \"sunhour\": 10,\n            \"uv_index\": 2\n        }\n    }\n}"
+						}
+					]
+				}
+			],
+			"description": "To look up historical weather data all the way back to 2008, simply pass one date of your choice (later than July 2008) or multiple semicolon-separated dates to the weatherstack API's `historical` endpoint using the `historical_date` parameter."
+		},
+		{
+			"name": "Forecast",
+			"item": [
+				{
+					"name": "forecast data",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.weatherstack.com/forecast?query=New York&forecast_days=7",
+							"protocol": "https",
+							"host": [
+								"api",
+								"weatherstack",
+								"com"
+							],
+							"path": [
+								"forecast"
+							],
+							"query": [
+								{
+									"key": "query",
+									"value": "New York",
+									"description": "[Required] Use this parameter to pass a single location or multiple semicolon-separated location identifiers to the API. Learn more about the Query Parameter.\n"
+								},
+								{
+									"key": "forecast_days",
+									"value": "7",
+									"description": "[Optional] Use this parameter to specify the number of days for which the API returns forecast data. (Default: 7 or 14 days, depending on your subscription)\n"
+								}
+							]
+						},
+						"description": "The weatherstack is capable of returning weather forecast data for up to 14 days into the future. To get weather forecasts, simply use the API's `forecast` endpoint and define your preferred number of forecast days using the `forecast_days` parameter."
+					},
+					"response": [
+						{
+							"name": "200 OK – forecast data",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://api.weatherstack.com/forecast?access_key={PASTE_YOUR_API_KEY_HERE}&query=New York&forecast_days=7",
+									"protocol": "https",
+									"host": [
+										"api",
+										"weatherstack",
+										"com"
+									],
+									"path": [
+										"forecast"
+									],
+									"query": [
+										{
+											"key": "access_key",
+											"value": "{PASTE_YOUR_API_KEY_HERE}",
+											"description": "[Required] Specify your API access key, available in your account dashboard.\n"
+										},
+										{
+											"key": "query",
+											"value": "New York",
+											"description": "[Required] Use this parameter to pass a single location or multiple semicolon-separated location identifiers to the API. Learn more about the Query Parameter.\n"
+										},
+										{
+											"key": "forecast_days",
+											"value": "7",
+											"description": "[Optional] Use this parameter to specify the number of days for which the API returns forecast data. (Default: 7 or 14 days, depending on your subscription)\n"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 18 Mar 2024 12:52:16 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; Charset=UTF-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "x-apilayer-transaction-id",
+									"value": "a2ce1b87-efd4-426e-a423-dab13e64632e"
+								},
+								{
+									"key": "access-control-allow-methods",
+									"value": "GET, HEAD, POST, PUT, PATCH, DELETE, OPTIONS"
+								},
+								{
+									"key": "access-control-allow-origin",
+									"value": "*"
+								},
+								{
+									"key": "x-request-time",
+									"value": "0.195"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Report-To",
+									"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=Tw3xuU8tC0tlWQc4S3yKcD18m8jCdwIdNifrw%2BTuWqKhxdASYLj%2B5mZYCNX0yW4uV4FS6C9eVhKjIDrKob1O43Zef0tXHIpT4w9Pt%2FtaVXj61UD4q3WOvEc1odBIHwkUV8y3xGDS\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "NEL",
+									"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "CF-RAY",
+									"value": "86655bdb0f9fa739-IXC"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"request\": {\n        \"type\": \"City\",\n        \"query\": \"New York, United States of America\",\n        \"language\": \"en\",\n        \"unit\": \"m\"\n    },\n    \"location\": {\n        \"name\": \"New York\",\n        \"country\": \"United States of America\",\n        \"region\": \"New York\",\n        \"lat\": \"40.714\",\n        \"lon\": \"-74.006\",\n        \"timezone_id\": \"America/New_York\",\n        \"localtime\": \"2024-03-18 08:50\",\n        \"localtime_epoch\": 1710751800,\n        \"utc_offset\": \"-4.0\"\n    },\n    \"current\": {\n        \"observation_time\": \"12:50 PM\",\n        \"temperature\": 6,\n        \"weather_code\": 113,\n        \"weather_icons\": [\n            \"https://cdn.worldweatheronline.com/images/wsymbols01_png_64/wsymbol_0001_sunny.png\"\n        ],\n        \"weather_descriptions\": [\n            \"Sunny\"\n        ],\n        \"wind_speed\": 4,\n        \"wind_degree\": 296,\n        \"wind_dir\": \"WNW\",\n        \"pressure\": 1008,\n        \"precip\": 0,\n        \"humidity\": 45,\n        \"cloudcover\": 0,\n        \"feelslike\": 3,\n        \"uv_index\": 3,\n        \"visibility\": 16,\n        \"is_day\": \"yes\"\n    },\n    \"forecast\": {\n        \"2024-03-18\": {\n            \"date\": \"2024-03-18\",\n            \"date_epoch\": 1710720000,\n            \"astro\": {\n                \"sunrise\": \"07:02 AM\",\n                \"sunset\": \"07:07 PM\",\n                \"moonrise\": \"12:36 PM\",\n                \"moonset\": \"03:52 AM\",\n                \"moon_phase\": \"Waxing Gibbous\",\n                \"moon_illumination\": 58\n            },\n            \"mintemp\": 5,\n            \"maxtemp\": 10,\n            \"avgtemp\": 8,\n            \"totalsnow\": 0,\n            \"sunhour\": 11,\n            \"uv_index\": 4\n        },\n        \"2024-03-19\": {\n            \"date\": \"2024-03-19\",\n            \"date_epoch\": 1710806400,\n            \"astro\": {\n                \"sunrise\": \"07:00 AM\",\n                \"sunset\": \"07:08 PM\",\n                \"moonrise\": \"01:39 PM\",\n                \"moonset\": \"04:36 AM\",\n                \"moon_phase\": \"Waxing Gibbous\",\n                \"moon_illumination\": 68\n            },\n            \"mintemp\": 1,\n            \"maxtemp\": 8,\n            \"avgtemp\": 5,\n            \"totalsnow\": 0,\n            \"sunhour\": 12.1,\n            \"uv_index\": 4\n        },\n        \"2024-03-20\": {\n            \"date\": \"2024-03-20\",\n            \"date_epoch\": 1710892800,\n            \"astro\": {\n                \"sunrise\": \"06:59 AM\",\n                \"sunset\": \"07:09 PM\",\n                \"moonrise\": \"02:43 PM\",\n                \"moonset\": \"05:11 AM\",\n                \"moon_phase\": \"Waxing Gibbous\",\n                \"moon_illumination\": 77\n            },\n            \"mintemp\": 4,\n            \"maxtemp\": 10,\n            \"avgtemp\": 7,\n            \"totalsnow\": 0,\n            \"sunhour\": 11.5,\n            \"uv_index\": 4\n        },\n        \"2024-03-21\": {\n            \"date\": \"2024-03-21\",\n            \"date_epoch\": 1710979200,\n            \"astro\": {\n                \"sunrise\": \"06:57 AM\",\n                \"sunset\": \"07:10 PM\",\n                \"moonrise\": \"03:47 PM\",\n                \"moonset\": \"05:40 AM\",\n                \"moon_phase\": \"Waxing Gibbous\",\n                \"moon_illumination\": 84\n            },\n            \"mintemp\": 0,\n            \"maxtemp\": 7,\n            \"avgtemp\": 3,\n            \"totalsnow\": 0,\n            \"sunhour\": 12.5,\n            \"uv_index\": 5\n        },\n        \"2024-03-22\": {\n            \"date\": \"2024-03-22\",\n            \"date_epoch\": 1711065600,\n            \"astro\": {\n                \"sunrise\": \"06:55 AM\",\n                \"sunset\": \"07:11 PM\",\n                \"moonrise\": \"04:48 PM\",\n                \"moonset\": \"06:03 AM\",\n                \"moon_phase\": \"Waxing Gibbous\",\n                \"moon_illumination\": 91\n            },\n            \"mintemp\": -2,\n            \"maxtemp\": 6,\n            \"avgtemp\": 2,\n            \"totalsnow\": 0,\n            \"sunhour\": 12.6,\n            \"uv_index\": 1\n        },\n        \"2024-03-23\": {\n            \"date\": \"2024-03-23\",\n            \"date_epoch\": 1711152000,\n            \"astro\": {\n                \"sunrise\": \"06:53 AM\",\n                \"sunset\": \"07:12 PM\",\n                \"moonrise\": \"05:49 PM\",\n                \"moonset\": \"06:24 AM\",\n                \"moon_phase\": \"Waxing Gibbous\",\n                \"moon_illumination\": 95\n            },\n            \"mintemp\": 1,\n            \"maxtemp\": 9,\n            \"avgtemp\": 6,\n            \"totalsnow\": 0,\n            \"sunhour\": 7.6,\n            \"uv_index\": 2\n        },\n        \"2024-03-24\": {\n            \"date\": \"2024-03-24\",\n            \"date_epoch\": 1711238400,\n            \"astro\": {\n                \"sunrise\": \"06:52 AM\",\n                \"sunset\": \"07:13 PM\",\n                \"moonrise\": \"06:48 PM\",\n                \"moonset\": \"06:43 AM\",\n                \"moon_phase\": \"Waxing Gibbous\",\n                \"moon_illumination\": 98\n            },\n            \"mintemp\": -3,\n            \"maxtemp\": 7,\n            \"avgtemp\": 2,\n            \"totalsnow\": 0,\n            \"sunhour\": 11.6,\n            \"uv_index\": 2\n        }\n    }\n}"
+						}
+					]
+				}
+			],
+			"description": "The weatherstack API is capable of returning weather forecast data for up to 14 days into the future. To get weather forecasts, simply use the API's `forecast` endpoint and define your preferred number of forecast days using the `forecast_days` parameter."
+		},
+		{
+			"name": "Autocomplete/Location Lookup",
+			"item": [
+				{
+					"name": "Autocomplete",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.weatherstack.com/autocomplete?query=london",
+							"protocol": "https",
+							"host": [
+								"api",
+								"weatherstack",
+								"com"
+							],
+							"path": [
+								"autocomplete"
+							],
+							"query": [
+								{
+									"key": "query",
+									"value": "london",
+									"description": "[Required] Use this parameter to pass your location search/autocomplete query to the API in free-text.\n"
+								}
+							]
+						},
+						"description": "The weatherstack API's location `autocomplete` endpoint can be used to pinpoint one or more specific locations and their identifying response objects with the aim of later passing them to a weather data endpoint. In our example below, we are looking for London, United Kingdom.\n\nA successful API request will return one or multiple results that match your search query. In our example, the first array object (London, United Kingdom) contains the correct result. Now that we have our identifying response objects of the target location we were looking for, we can make sure that the correct location is used by other API endpoints by using one of the available location identifiers (ideally: `lat` and `lon`) for upcoming queries."
+					},
+					"response": [
+						{
+							"name": "200 OK – Autocomplete",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://api.weatherstack.com/autocomplete?access_key={PASTE_YOUR_API_KEY_HERE}&query=london",
+									"protocol": "https",
+									"host": [
+										"api",
+										"weatherstack",
+										"com"
+									],
+									"path": [
+										"autocomplete"
+									],
+									"query": [
+										{
+											"key": "access_key",
+											"value": "{PASTE_YOUR_API_KEY_HERE}",
+											"description": "[Required] Specify your API access key, available in your account dashboard.\n"
+										},
+										{
+											"key": "query",
+											"value": "london",
+											"description": "[Required] Use this parameter to pass your location search/autocomplete query to the API in free-text.\n"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 18 Mar 2024 13:03:45 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; Charset=UTF-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "x-apilayer-transaction-id",
+									"value": "69dcbd8a-4642-4236-8a71-8f353d6bb1a7"
+								},
+								{
+									"key": "access-control-allow-methods",
+									"value": "GET, HEAD, POST, PUT, PATCH, DELETE, OPTIONS"
+								},
+								{
+									"key": "access-control-allow-origin",
+									"value": "*"
+								},
+								{
+									"key": "x-request-time",
+									"value": "0.132"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Report-To",
+									"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=W%2B5oWZ1C9A0LRSlsKZ7pQCVKzIpQtZyq2bn%2BXjs3YMnmA3RclWvrLPa2mURu3%2FWDrQ5qNwAG%2B%2BjghgP3XuItZFsKARbAUe1z3rFHjceYmWP4DbsM%2F5f8ZAWuYap2jPlixND82D53\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "NEL",
+									"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "CF-RAY",
+									"value": "86656caf3df9a739-IXC"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"request\": {\n        \"query\": \"london\",\n        \"results\": 2\n    },\n    \"results\": [\n        {\n            \"name\": \"London\",\n            \"country\": \"United Kingdom\",\n            \"region\": \"City of London, Greater London\",\n            \"lat\": \"51.517\",\n            \"lon\": \"-0.106\",\n            \"timezone_id\": \"Europe/London\",\n            \"utc_offset\": \"0.0\"\n        },\n        {\n            \"name\": \"London\",\n            \"country\": \"Canada\",\n            \"region\": \"Ontario\",\n            \"lat\": \"42.983\",\n            \"lon\": \"-81.250\",\n            \"timezone_id\": \"America/Toronto\",\n            \"utc_offset\": \"-4.0\"\n        }\n    ]\n}"
+						}
+					]
+				}
+			],
+			"description": "The weatherstack API's location `autocomplete` endpoint can be used to pinpoint one or more specific locations and their identifying response objects with the aim of later passing them to a weather data endpoint."
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": [
+			{
+				"key": "in",
+				"value": "query",
+				"type": "string"
+			},
+			{
+				"key": "value",
+				"value": "{{access_key}}",
+				"type": "string"
+			},
+			{
+				"key": "key",
+				"value": "access_key",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "access_key",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
