@@ -16,9 +16,21 @@
  * F = anything < 60
  */
 function toLetterGrade(numGrade) {
-  // TODO
+  if (numGrade >= 90) {
+    return("A");
+} else if (numGrade >= 80) {
+    return("B");
+} else if (numGrade >= 70) {
+    return("C");
+} else if (numGrade >= 60) {
+    return("D");
+} else if (numGrade < 60) {
+    return("D");
+} else {
+    return("INVALID");
 }
 
+}
 /**
  * Task 2: Create a function that takes in an array of integers and returns a
  * new array containing only even elements from the original array. The
@@ -27,7 +39,12 @@ function toLetterGrade(numGrade) {
  * Example: [9, 3, 4, 1, 2, 0] --> [4, 2, 0]
  */
 function getEvenElements(array) {
-  // TODO
+  for (var i = 0; i < array.length; i++) {
+    newArray = []
+    if (array[i] % 2 == 0) {
+      newArray.push(array[i]);
+    }
+  }
 }
 
 /**
@@ -40,7 +57,14 @@ function getEvenElements(array) {
  * Example: "I love Bits of Good" --> 4
  */
 function findLongestWord(string) {
-  // TODO
+  newArray = string.split(" ");
+  for (var i = 0; i < newArray.length; i++) {
+    longest = newArray[0].length;
+    if (newArray[i].length > longest) {
+      longest = newArray[i].length;
+    }
+  }
+  return longest
 }
 
 /**
@@ -65,7 +89,8 @@ function findLongestWord(string) {
     } 
  */
 function combineObjects(object1, object2) {
-  // TODO
+  object1.merge(object2);
+  return object1;
 }
 
 /**
@@ -77,7 +102,10 @@ function combineObjects(object1, object2) {
  *  Example: [1, 2, 3] -> [3, 2, 1]
  */
 function reverseArr(array) {
-  // TODO
+  newArray = [];
+  for (let i = array.length - 1; i >= 0; i--) {
+    newArray.push(array[i]);
+  }
 }
 
 // DO NOT EDIT BELOW THIS LINE -- the code is for testing purposes only!
