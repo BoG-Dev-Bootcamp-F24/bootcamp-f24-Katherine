@@ -10,8 +10,8 @@ export default function LinesPage() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const stations = await axios.get("http://localhost:5173//api/stations");
-      const trains = await axios.get("http://localhost:5173//api/trains");
+      const stations = await axios.get("http://localhost:5000/api/stations");
+      const trains = await axios.get("http://localhost:5000/api/trains");
       setStationData(stations.data);
       setTrainData(trains.data);
     };
