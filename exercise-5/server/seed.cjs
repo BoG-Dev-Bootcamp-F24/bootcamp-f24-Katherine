@@ -74,21 +74,35 @@ const processTrainData = (data) => {
 
 const importData = async () => {     
   try {       
-    await mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true });       
-    const rawData = readJSONFile(path.join(__dirname, "trainData.json"));       
-    const trains = rawData.RailArrivals;
-    const processedTrains = processTrainData(trains);          
-    const stationData = readJSONFile(path.join(__dirname, "stationData.json"));              
-    const stations = processStationData(stationData);          
-    await Train.insertMany(processedTrains);       
-    await Station.insertMany(stations);        
-  } 
+    console.log("Starting data import...");
+    
+    const rawData = readJSONFile(path.join(__dirname, "trainData.json"));
+    if (!rawData || !rawData.RailArrivals) {
+      throw new Error("Invalid train data format: RailArrivals field not found.");
+    }
 
-  catch (error) {     
-  } finally {       
-    await mongoose.connection.close();     
+    const trains = rawData.RailArrivals;
+    const processedTrains = processTrainData(trains);
+    console.log("Processed train data:", processedTrains.length, "trains to be inserted.");
+    
+    const stationData = readJSONFile(path.join(__dirname, "stationData.json"));
+    const stations = processStationData(stationData);
+    console.log("Processed station data:", stations.length, "stations to be inserted.");
+
+    await Train.insertMany(processedTrains);
+    console.log("Train data inserted successfully.");
+
+    await Station.insertMany(stations);
+    console.log("Station data inserted successfully.");
+    
+  } catch (error) {
+    console.error("Error during data import:", error.message);
+  } finally {
+    await mongoose.connection.close();
+    console.log("MongoDB connection closed.");
   }   
-};    
+};
+   
 
 importData();
 
