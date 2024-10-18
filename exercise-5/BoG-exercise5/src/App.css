@@ -1,0 +1,115 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  margin: 20px;
+}
+
+/* Left column (station list) */
+.station-list {
+  background-color: #333;
+  color: white;
+  padding: 15px;
+  width: 250px;
+}
+
+.station-list h3 {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.station-list ul {
+  list-style: none;
+  padding: 0;
+}
+
+.station-list ul li {
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.station-list ul li:hover {
+  background-color: #555;
+}
+
+.main-content {
+  flex: 1;
+  padding: 20px;
+}
+
+.header {
+  font-size: 36px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Button bar */
+.button-bar {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.button-bar button {
+  padding: 10px 20px;
+  margin: 0 10px;
+  border: none;
+  background-color: #ccc;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button-bar button.active {
+  background-color: #000;
+  color: white;
+}
+
+.button-bar button:hover {
+  background-color: #888;
+  color: white;
+}
+
+.train-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.train-info .logo {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.train-info .details {
+  flex: 1;
+  margin-left: 20px;
+}
+
+.train-info .details .line {
+  color: #ffd700;
+  font-weight: bold;
+}
+
+.train-info .details .status {
+  color: green;
+  font-size: 14px;
+}
+
+.train-info .time {
+  font-size: 24px;
+  color: green;
+}
